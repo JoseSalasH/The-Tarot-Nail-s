@@ -117,13 +117,34 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   }
 
-  #reserva iframe {
+  /* 🔥 Botón Instagram */
+  .btn-instagram {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff5c8d;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+
+  .btn-instagram:hover {
+    background: #e14b79;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  }
+
+  #reserva iframe, #ubicacion iframe {
     width: 100%;
     border: none;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    height: 700px;
   }
+
+  #reserva iframe { height: 700px; }
+  #ubicacion iframe { height: 400px; }
 
   footer {
     background-color: #000;
@@ -188,22 +209,6 @@
     margin: 0;
   }
 
-  /* Botón minimalista */
-  .map-btn {
-    display: inline-block;
-    background: #000;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s;
-  }
-
-  .map-btn:hover {
-    background: #ff5c8d;
-  }
-
   /* Responsivo */
   @media (max-width: 768px) {
     header h1 { font-size: 2.2rem; }
@@ -250,12 +255,16 @@
       <h3>Visión</h3>
       <p>Ser un salón líder en innovación y estilo, destacando por dedicación, pasión y compromiso con la belleza de nuestros clientes.</p>
 
-      <div id="ubicacion" style="margin-top: 20px; text-align:center;">
+     <div id="ubicacion" style="margin-top: 20px;">
         <h3>Ubicación</h3>
-        <a href="https://www.google.com/maps?q=10.012265,-84.214862" 
-           target="_blank" class="map-btn">
-          Ver ubicación
-        </a>
+        <iframe 
+          src="https://www.google.com/maps?q=10.012265,-84.214862&z=15&hl=es&output=embed" 
+          width="100%" 
+          height="350" 
+          style="border:0; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);" 
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
       </div>
     </div>
   </section>
@@ -263,13 +272,34 @@
   <section id="servicios">
     <h2>Servicios</h2>
     <div class="servicios-grid">
-      <div class="card"><h3>Multi-flex Luminary</h3><p>₡15.000</p></div>
-      <div class="card"><h3>Gel X</h3><p>₡17.000 en adelante</p></div>
-      <div class="card"><h3>Polygel</h3><p>₡17.000 en adelante</p></div>
-      <div class="card"><h3>Semipermanente manos</h3><p>₡12.000</p></div>
-      <div class="card"><h3>Semipermanente pies</h3><p>₡10.000</p></div>
-      <div class="card"><h3>Pedicura sencilla</h3><p>₡16.000</p></div>
-      <div class="card"><h3>Pedicura Spa</h3><p>₡20.000</p></div>
+      <div class="card">
+        <h3>Multi-flex Luminary</h3>
+        <p>₡15.000</p>
+      </div>
+      <div class="card">
+        <h3>Gel X</h3>
+        <p>₡17.000 en adelante</p>
+      </div>
+      <div class="card">
+        <h3>Polygel</h3>
+        <p>₡17.000 en adelante</p>
+      </div>
+      <div class="card">
+        <h3>Semipermanente manos</h3>
+        <p>₡12.000</p>
+      </div>
+      <div class="card">
+        <h3>Semipermanente pies</h3>
+        <p>₡10.000</p>
+      </div>
+      <div class="card">
+        <h3>Pedicura sencilla</h3>
+        <p>₡16.000</p>
+      </div>
+      <div class="card">
+        <h3>Pedicura Spa</h3>
+        <p>₡20.000</p>
+      </div>
     </div>
   </section>
 
@@ -281,7 +311,12 @@
       <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+3" alt="Diseño de uñas 3">
       <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+4" alt="Diseño de uñas 4">
     </div>
-    <p>Aquí puedes ver algunos de nuestros trabajos.</p>
+
+    <div style="text-align:center; margin-top:20px;">
+      <a href="https://www.instagram.com/thetarotnails_/" target="_blank" class="btn-instagram">
+        Ver más diseños en Instagram
+      </a>
+    </div>
   </section>
 
   <section id="reserva">
@@ -300,7 +335,7 @@
 </footer>
 
 <script>
-function showSection(sectionId) {
+function showSection(sectionId, scroll = true) {
   const sections = document.querySelectorAll('section');
   sections.forEach(sec => sec.classList.remove('active'));
   const activeSection = document.getElementById(sectionId);
@@ -312,8 +347,13 @@ function showSection(sectionId) {
   if(linkElement) linkElement.classList.add('active');
 }
 
-// 👉 Iniciar en "Conózcanos"
-showSection('conocenos');
+// 👇 Iniciar en "Conózcanos" sin hacer scroll
+showSection('conocenos', false);
+
+// 👇 Siempre empezar arriba cuando se recarga la página
+window.onload = function() {
+  window.scrollTo(0, 0);
+};
 </script>
 
 </body>
