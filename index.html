@@ -169,25 +169,76 @@
       text-decoration: underline;
     }
 
-    /* Media queries: tablets y móviles */
-    @media (max-width: 768px) {
-      .logo-header { 
-        heigth: 40vw;
-      }
-      header h1 { font-size: 2.2rem; }
-      nav a { font-size: 0.95rem; margin: 5px 10px; }
-      section.active { padding: 35px 15px; }
-      .galeria-grid img { height: 220px; }
-      #reserva iframe { height: 500px; }
-    }
+ /* Logo fijo en la esquina superior izquierda */
+.logo-header {
+  height: 80px;         /* tamaño inicial del logo */
+  margin: 0;
+  padding-left: 10px;   /* opcional: separación del borde izquierdo */
+}
 
-    @media (max-width: 480px) {
-      .logo-header { 
-        heigth: 50vw;
-position: relative; 
-        left: 0;
-        top: 0;
-        margin-left: 0;
+/* Header con flexbox: logo a la izquierda, menú a la derecha */
+header {
+  display: flex;
+  align-items: center;         /* centra verticalmente logo y menú */
+  justify-content: space-between; /* reparte espacio: logo izq, menú der */
+  padding: 10px 20px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .logo-header {
+    height: 40vw;  /* logo más flexible en tablets */
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  nav {
+    font-size: 0.95rem;
+    margin: 5px 10px;
+  }
+
+  section.active {
+    padding: 35px 15px;
+  }
+
+  .galeria-grid img {
+    height: 220px;
+  }
+
+  #reserva iframe {
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-header {
+    height: 50vw; /* logo más grande en móviles */
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav {
+    font-size: 0.85rem;
+    margin: 5px 8px;
+  }
+
+  section.active {
+    padding: 20px 10px;
+  }
+
+  .galeria-grid img {
+    height: 180px;
+  }
+
+  #reserva iframe {
+    height: 400px;
+  }
+}
+
       }
       header h1 { font-size: 1.8rem; }
       nav a { font-size: 0.85rem; margin: 5px 8px; }
