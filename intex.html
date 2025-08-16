@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salón de Uñas</title>
+    <title>The Tarot Nails</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -68,5 +68,54 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // SCRIPT PARA HORARIOS Y MENSAJE PERSONALIZADO
+        const form = document.getElementById("reservaForm");
+        const fechaInput = document.getElementById("fecha");
+        const horaSelect = document.getElementById("hora");
+        const mensaje = document.getElementById("mensaje");
+
+        // Horarios disponibles
+        const horarios = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
+        let reservas = {};
+
+        function actualizarHorarios() {
+            const fecha = fechaInput.value;
+            horaSelect.innerHTML = "";
+            horarios.forEach(hora => {
+                if (!reservas[fecha] || !reservas[fecha].includes(hora)) {
+                    const option = document.createElement("option");
+                    option.value = hora;
+                    option.textContent = hora;
+                    horaSelect.appendChild(option);
+                }
+            });
+        }
+
+        fechaInput.addEventListener("change", actualizarHorarios);
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById("nombre").value;
+            const telefono = document.getElementById("telefono").value;
+            const servicio = document.getElementById("servicio").value;
+            const fecha = fechaInput.value;
+            const hora = horaSelect.value;
+
+            if (!reservas[fecha]) reservas[fecha] = [];
+            reservas[fecha].push(hora); // Bloquear horario
+
+            // Mensaje personalizado con el nombre del cliente
+            mensaje.textContent = `¡Gracias, ${nombre}! Tu cita para ${servicio} está confirmada el ${fecha} a las ${hora}.`;
+
+            // Desaparecer mensaje después de 5 segundos
+            setTimeout(() => {
+                mensaje.textContent = "";
+            }, 5000);
+
+            actualizarHorarios();
+            form.reset();
+        });
+    </script>
 </body>
 </html>
