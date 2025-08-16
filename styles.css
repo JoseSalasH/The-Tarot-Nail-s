@@ -1,0 +1,32 @@
+/* Encabezado */
+header {
+    background: #000; /* fondo negro */
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+/* Título */
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Menú horizontal */
+nav.menu {
+    margin-top: 15px;
+}
+
+nav.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav.menu a:hover {
+    color: #ff69b4; /* cambio de color al pasar el mouse */
+}
