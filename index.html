@@ -12,8 +12,16 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #f5f0e6; /* beige suave */
+      background-color: #ffffff; /* fondo blanco */
       color: #333;
+    }
+
+    /* Contenedor central */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
 
     header {
@@ -93,8 +101,9 @@
     /* Galería */
     .galeria-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
+      justify-items: center;
       padding: 20px;
     }
 
@@ -145,34 +154,53 @@
       text-decoration: underline;
     }
 
-    /* Responsivo para móviles */
-    @media (max-width: 600px) {
+    /* Responsivo para móviles y tablets */
+    @media (max-width: 768px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       nav a {
+        font-size: 0.95rem;
         margin: 0 8px;
-        font-size: 0.9rem;
       }
 
       section.active {
-        padding: 30px 15px;
+        padding: 35px 15px;
+      }
+
+      .galeria-grid img {
+        height: 220px;
       }
 
       #reserva iframe {
         height: 500px;
       }
+    }
 
-      .galeria-grid {
-        gap: 15px;
-        padding: 15px;
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        font-size: 0.85rem;
+        margin: 0 5px;
+      }
+
+      section.active {
+        padding: 20px 10px;
       }
 
       .galeria-grid img {
-        height: 200px;
+        height: 180px;
+      }
+
+      #reserva iframe {
+        height: 400px;
       }
     }
+
   </style>
 </head>
 <body>
@@ -187,46 +215,48 @@
     </nav>
   </header>
 
-  <!-- Sección Conózcanos con Misión y Visión -->
-  <section id="conocenos" class="active">
-    <h2>Conózcanos</h2>
-    <p>The Tarot Nails es un espacio de cuidado de uñas, este fue creado y es atendido personalmente por su dueña, 
-      cada servicio refleja la dedicación, amor y detalle. Es un emprendimiento que surgió de un pasatiempo que se convirtió en 
-      una pasión que genera ingresos y a la vez bienestar emocional. La fundadora ha participado en diferentes seminarios así 
-      como capacitaciones destacadas en el mundo de la belleza para cada vez dar un mejor servicio a sus clientes.
-      Es un salón con altos estándares de calidad, utilizando productos líderes en el mercado y estando siempre al corriente de
-      las tendencias y atendiendo con toda la actitud a sus clientes.</p>
+  <div class="container">
+    <!-- Sección Conózcanos con Misión y Visión -->
+    <section id="conocenos" class="active">
+      <h2>Conózcanos</h2>
+      <p>The Tarot Nails es un espacio de cuidado de uñas, este fue creado y es atendido personalmente por su dueña, 
+        cada servicio refleja la dedicación, amor y detalle. Es un emprendimiento que surgió de un pasatiempo que se convirtió en 
+        una pasión que genera ingresos y a la vez bienestar emocional. La fundadora ha participado en diferentes seminarios así 
+        como capacitaciones destacadas en el mundo de la belleza para cada vez dar un mejor servicio a sus clientes.
+        Es un salón con altos estándares de calidad, utilizando productos líderes en el mercado y estando siempre al corriente de
+        las tendencias y atendiendo con toda la actitud a sus clientes.</p>
 
-    <div id="mision-vision" style="margin-top:40px;">
-      <h3>Misión</h3>
-      <p>Nuestra misión es ofrecer servicios de belleza y cuidado de uñas de alta calidad, brindando a cada cliente una experiencia única 
-         que combine estética, bienestar y atención personalizada.</p>
+      <div id="mision-vision" style="margin-top:40px;">
+        <h3>Misión</h3>
+        <p>Nuestra misión es ofrecer servicios de belleza y cuidado de uñas de alta calidad, brindando a cada cliente una experiencia única 
+           que combine estética, bienestar y atención personalizada.</p>
 
-      <h3>Visión</h3>
-      <p>Ser reconocidos como un salón líder en innovación y estilo, destacando por nuestra dedicación, pasión y compromiso con la belleza y satisfacción de nuestros clientes.</p>
-    </div>
-  </section>
+        <h3>Visión</h3>
+        <p>Ser reconocidos como un salón líder en innovación y estilo, destacando por nuestra dedicación, pasión y compromiso con la belleza y satisfacción de nuestros clientes.</p>
+      </div>
+    </section>
 
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <p>Manicure, Pedicure, Nail Art y mucho más.</p>
-  </section>
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <p>Manicure, Pedicure, Nail Art y mucho más.</p>
+    </section>
 
-  <section id="galeria">
-    <h2>Galería</h2>
-    <div class="galeria-grid">
-      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+1" alt="Diseño de uñas 1">
-      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+2" alt="Diseño de uñas 2">
-      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+3" alt="Diseño de uñas 3">
-      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+4" alt="Diseño de uñas 4">
-    </div>
-    <p>Aquí puedes ver algunos de nuestros trabajos.</p>
-  </section>
+    <section id="galeria">
+      <h2>Galería</h2>
+      <div class="galeria-grid">
+        <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+1" alt="Diseño de uñas 1">
+        <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+2" alt="Diseño de uñas 2">
+        <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+3" alt="Diseño de uñas 3">
+        <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+4" alt="Diseño de uñas 4">
+      </div>
+      <p>Aquí puedes ver algunos de nuestros trabajos.</p>
+    </section>
 
-  <section id="reserva">
-    <h2>Reserva tu cita</h2>
-    <iframe src="https://calendly.com/tarotnails4/30min"></iframe>
-  </section>
+    <section id="reserva">
+      <h2>Reserva tu cita</h2>
+      <iframe src="https://calendly.com/tarotnails4/30min"></iframe>
+    </section>
+  </div>
 
   <!-- Footer con Instagram blanco y teléfono clickeable -->
   <footer>
