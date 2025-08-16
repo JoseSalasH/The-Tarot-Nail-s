@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salón de Uñas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>The Tarot Nails</h1>
+        <nav>
+            <a href="#servicios">Servicios</a>
+            <a href="#reserva">Reservas</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <ul>
+            <li>Manicura - $15</li>
+            <li>Pedicura - $20</li>
+            <li>Uñas Acrílicas - $30</li>
+            <li>Decoración Especial - $25</li>
+        </ul>
+    </section>
+
+    <section id="reserva">
+        <h2>Reservar Cita</h2>
+        <form id="reservaForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" required>
+
+            <label for="servicio">Servicio:</label>
+            <select id="servicio" required>
+                <option value="Manicura">Manicura</option>
+                <option value="Pedicura">Pedicura</option>
+                <option value="Uñas Acrílicas">Uñas Acrílicas</option>
+                <option value="Decoración Especial">Decoración Especial</option>
+            </select>
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required>
+
+            <label for="hora">Hora:</label>
+            <select id="hora" required>
+                <!-- Horarios se cargarán con JavaScript -->
+            </select>
+
+            <button type="submit">Reservar</button>
+        </form>
+        <p id="mensaje"></p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Instagram: @thetarotnails_</p>
+        <p>WhatsApp: +506 71586607</p>
+        <p>Dirección: El Carmen, Alajuela</p>
+    </section>
+
+    <footer>
+        <p>© 2025 The Tarot Nails</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
