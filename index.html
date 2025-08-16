@@ -1,278 +1,257 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tarot Nails</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Tarot Nails</title>
 
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #ffffff;
-      color: #333;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #333;
+  }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
 
-    header {
-      background-color: #000;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      text-align: center;
-    }
+  header {
+    background-color: #000;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+  }
 
-    header h1 {
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: 3rem;
-      color: #fff;
-      margin: 0;
-      cursor: pointer;
-    }
+  header h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3rem;
+    color: #fff;
+    margin: 0;
+    cursor: pointer;
+  }
 
-    nav {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+  nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    nav a {
-      text-decoration: none;
-      color: #f8f8f8;
-      margin: 0 15px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      padding-bottom: 3px;
-      transition: color 0.3s, border-bottom 0.3s;
-      position: relative;
-    }
+  nav a {
+    text-decoration: none;
+    color: #f8f8f8;
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    padding-bottom: 3px;
+    transition: color 0.3s, border-bottom 0.3s;
+    position: relative;
+  }
 
-    nav a:hover {
-      color: #ff5c8d;
-      border-bottom: 2px solid #ff5c8d;
-    }
+  nav a:hover, nav a.active {
+    color: #ff5c8d;
+    border-bottom: 2px solid #ff5c8d;
+  }
 
-    nav a.active {
-      color: #ff5c8d;
-      border-bottom: 2px solid #ff5c8d;
-    }
+  section {
+    opacity: 0;
+    transform: translateY(30px);
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.8s ease, max-height 0.8s ease, transform 0.8s ease;
+    padding: 0 20px;
+    margin-top: 140px;
+  }
 
-    section {
-      opacity: 0;
-      transform: translateY(30px);
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity 0.8s ease, max-height 0.8s ease, transform 0.8s ease;
-      padding: 0 20px;
-      margin-top: 100px; /* ajustado por header fijo */
-    }
+  section.active {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 3000px;
+    padding: 50px 20px;
+  }
 
-    section.active {
-      opacity: 1;
-      transform: translateY(0);
-      max-height: 3000px;
-      padding: 50px 20px;
-    }
+  section h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #000;
+  }
 
-    section h2 {
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #000;
-    }
+  section h3 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: #000;
+    margin-bottom: 10px;
+  }
 
-    section h3 {
-      font-family: 'Cinzel Decorative', cursive;
-      color: #000;
-      margin-bottom: 10px;
-    }
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+  }
 
-    .galeria-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      justify-items: center;
-      padding: 20px;
-    }
+  .galeria-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
 
-    .galeria-grid img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
+  .galeria-grid img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
 
-    .galeria-grid img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
+  #reserva iframe, #ubicacion iframe {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
 
-    #reserva iframe {
-      width: 100%;
-      height: 700px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+  #reserva iframe { height: 700px; }
+  #ubicacion iframe { height: 400px; }
 
-    footer {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
 
-    .footer-info {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      align-items: center;
-      margin: 5px 0;
-    }
+  .footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin: 5px 0;
+  }
 
-    footer p, footer a {
-      margin: 0;
-      color: #fff;
-      text-decoration: none;
-    }
+  footer p, footer a {
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+  }
 
-    footer a:hover {
-      color: #ff5c8d;
-      text-decoration: underline;
-    }
+  footer a:hover {
+    color: #ff5c8d;
+    text-decoration: underline;
+  }
 
-    /* Responsivo para móviles y tablets */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
-      nav a { font-size: 0.95rem; margin: 5px 10px; }
-      section.active { padding: 35px 15px; }
-      .galeria-grid img { height: 220px; }
-      #reserva iframe { height: 500px; }
-    }
+  /* Responsivo */
+  @media (max-width: 768px) {
+    header h1 { font-size: 2.2rem; }
+    nav a { font-size: 0.95rem; margin: 5px 10px; }
+    section.active { padding: 35px 15px; }
+    .galeria-grid img { height: 220px; }
+    #reserva iframe { height: 500px; }
+  }
 
-    @media (max-width: 480px) {
-      header h1 { font-size: 1.8rem; }
-      nav a { font-size: 0.85rem; margin: 5px 8px; }
-      section.active { padding: 20px 10px; }
-      .galeria-grid img { height: 180px; }
-      #reserva iframe { height: 400px; }
-    }
-
-  </style>
+  @media (max-width: 480px) {
+    header h1 { font-size: 1.8rem; }
+    nav a { font-size: 0.85rem; margin: 5px 8px; }
+    section.active { padding: 20px 10px; }
+    .galeria-grid img { height: 180px; }
+    #reserva iframe { height: 400px; }
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <!-- Título ahora funciona como enlace a Conózcanos -->
-    <h1 onclick="showSection('conocenos')">The Tarot Nails</h1>
-    <nav>
-      <a id="link-conocenos" onclick="showSection('conocenos')">Conózcanos</a>
-      <a id="link-servicios" onclick="showSection('servicios')">Servicios</a>
-      <a id="link-galeria" onclick="showSection('galeria')">Galería</a>
-      <a id="link-reserva" onclick="showSection('reserva')">Agendar</a>
-    </nav>
-  </header>
+<header>
+  <h1 onclick="showSection('conocenos')">The Tarot Nails</h1>
+  <nav>
+    <a id="link-conocenos" onclick="showSection('conocenos')">Conózcanos</a>
+    <a id="link-servicios" onclick="showSection('servicios')">Servicios</a>
+    <a id="link-galeria" onclick="showSection('galeria')">Galería</a>
+    <a id="link-reserva" onclick="showSection('reserva')">Agendar</a>
+  </nav>
+</header>
 
-  <div class="container">
-    <section id="conocenos" class="active">
-      <h2>Conózcanos</h2>
-      <p>The Tarot Nails es un espacio de cuidado de uñas, este fue creado y es atendido personalmente por su dueña, 
-        cada servicio refleja la dedicación, amor y detalle. Es un emprendimiento que surgió de un pasatiempo que se convirtió en 
-        una pasión que genera ingresos y a la vez bienestar emocional. La fundadora ha participado en diferentes seminarios así 
-        como capacitaciones destacadas en el mundo de la belleza para cada vez dar un mejor servicio a sus clientes.
-        Es un salón con altos estándares de calidad, utilizando productos líderes en el mercado y estando siempre al corriente de
-        las tendencias y atendiendo con toda la actitud a sus clientes.</p>
+<div class="container">
+  <section id="conocenos" class="active">
+    <h2>Conózcanos</h2>
+    <p>The Tarot Nails es un espacio de cuidado de uñas, atendido personalmente por su dueña, reflejando dedicación y detalle...</p>
 
-      <div id="mision-vision" style="margin-top:40px;">
-        <h3>Misión</h3>
-        <p>Nuestra misión es ofrecer servicios de belleza y cuidado de uñas de alta calidad, brindando a cada cliente una experiencia única 
-           que combine estética, bienestar y atención personalizada.</p>
+    <div id="mision-vision" style="margin-top:40px;">
+      <h3>Misión</h3>
+      <p>Ofrecer servicios de belleza y cuidado de uñas de alta calidad, brindando una experiencia única.</p>
 
-        <h3>Visión</h3>
-        <p>Ser reconocidos como un salón líder en innovación y estilo, destacando por nuestra dedicación, pasión y compromiso con la belleza y satisfacción de nuestros clientes.</p>
+      <h3>Visión</h3>
+      <p>Ser un salón líder en innovación y estilo, destacando por dedicación, pasión y compromiso con la belleza de nuestros clientes.</p>
 
-        <!-- Mapa de Waze debajo de Visión -->
-        <div id="ubicacion" style="margin-top: 20px;">
-          <h3>Encuéntranos en Waze</h3>
-          <iframe 
-            src="https://embed.waze.com/iframe?zoom=15&lat=10.012265&lon=-84.214862&pin=1" 
-            width="100%" 
-            height="400" 
-            style="border:none; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);" 
-            allowfullscreen>
-          </iframe>
-        </div>
+      <div id="ubicacion" style="margin-top: 20px;">
+        <h3>Encuéntranos en Waze</h3>
+        <iframe src="https://embed.waze.com/iframe?zoom=15&lat=10.012265&lon=-84.214862&pin=1" allowfullscreen></iframe>
       </div>
-    </section>
-
-    <section id="servicios">
-      <h2>Servicios</h2>
-      <p>Manicure, Pedicure, Nail Art y mucho más.</p>
-    </section>
-
-    <section id="galeria">
-      <h2>Galería</h2>
-      <div class="galeria-grid">
-        <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+1" alt="Diseño de uñas 1">
-        <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+2" alt="Diseño de uñas 2">
-        <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+3" alt="Diseño de uñas 3">
-        <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+4" alt="Diseño de uñas 4">
-      </div>
-      <p>Aquí puedes ver algunos de nuestros trabajos.</p>
-    </section>
-
-    <section id="reserva">
-      <h2>Reserva tu cita</h2>
-      <iframe src="https://calendly.com/tarotnails4/30min"></iframe>
-    </section>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 The Tarot Nails. Todos los derechos reservados.</p>
-    <div class="footer-info">
-      <span>📍 Alajuela, Costa Rica</span> | 
-      <a href="tel:+50671586607"> +506 7158 6607</a>
     </div>
-    <p>Síguenos en 
-      <a href="https://www.instagram.com/thetarotnails_/" target="_blank">Instagram</a>
-    </p>
-  </footer>
+  </section>
 
-  <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('section');
-      sections.forEach(sec => sec.classList.remove('active'));
-      const activeSection = document.getElementById(sectionId);
-      activeSection.classList.add('active');
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <p>Manicure, Pedicure, Nail Art y mucho más.</p>
+  </section>
 
-      const links = document.querySelectorAll('nav a');
-      links.forEach(link => link.classList.remove('active'));
-      const linkElement = document.getElementById('link-' + sectionId);
-      if(linkElement) linkElement.classList.add('active');
+  <section id="galeria">
+    <h2>Galería</h2>
+    <div class="galeria-grid">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+1" alt="Diseño de uñas 1">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+2" alt="Diseño de uñas 2">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+3" alt="Diseño de uñas 3">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+4" alt="Diseño de uñas 4">
+    </div>
+    <p>Aquí puedes ver algunos de nuestros trabajos.</p>
+  </section>
 
-      // Scroll suave
-      activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  <section id="reserva">
+    <h2>Reserva tu cita</h2>
+    <iframe src="https://calendly.com/tarotnails4/30min"></iframe>
+  </section>
+</div>
 
-    document.getElementById('link-conocenos').classList.add('active');
-  </script>
+<footer>
+  <p>&copy; 2025 The Tarot Nails. Todos los derechos reservados.</p>
+  <div class="footer-info">
+    <span>📍 Alajuela, Costa Rica</span> | 
+    <a href="tel:+50671586607"> +506 7158 6607</a>
+  </div>
+  <p>Síguenos en <a href="https://www.instagram.com/thetarotnails_/" target="_blank">Instagram</a></p>
+</footer>
+
+<script>
+function showSection(sectionId) {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(sec => sec.classList.remove('active'));
+  const activeSection = document.getElementById(sectionId);
+  activeSection.classList.add('active');
+
+  const links = document.querySelectorAll('nav a');
+  links.forEach(link => link.classList.remove('active'));
+  const linkElement = document.getElementById('link-' + sectionId);
+  if(linkElement) linkElement.classList.add('active');
+
+  activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+document.getElementById('link-conocenos').classList.add('active');
+</script>
 
 </body>
 </html>
+
