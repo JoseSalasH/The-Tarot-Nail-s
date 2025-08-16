@@ -20,14 +20,14 @@ header {
     padding: 20px 10px;
 }
 
-/* Título del salón con Great Vibes */
+/* Título del salón */
 header h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 3em;
     margin-bottom: 15px;
 }
 
-/* Barra de navegación horizontal con Playfair Display */
+/* Barra de navegación horizontal */
 nav.menu {
     margin-top: 10px;
 }
