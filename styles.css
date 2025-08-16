@@ -1,12 +1,12 @@
 /* Encabezado */
 header {
-    background: #000; /* fondo negro */
+    background-color: #000; /* fondo negro */
     color: white;
     text-align: center;
     padding: 20px 10px;
 }
 
-/* Título */
+/* Título del salón */
 header h1 {
     margin: 0;
     font-size: 2em;
@@ -18,7 +18,9 @@ nav.menu {
     margin-top: 15px;
 }
 
+/* Estilos de los enlaces del menú */
 nav.menu a {
+    display: inline-block;
     color: white;
     text-decoration: none;
     margin: 0 15px;
@@ -28,5 +30,13 @@ nav.menu a {
 }
 
 nav.menu a:hover {
-    color: #ff69b4; /* cambio de color al pasar el mouse */
+    color: #ff69b4; /* color rosado al pasar el mouse */
+}
+
+/* Asegurar que sea responsive en móviles */
+@media (max-width: 600px) {
+    nav.menu a {
+        display: block;
+        margin: 8px 0;
+    }
 }
