@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* Estilos generales */
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -40,15 +39,26 @@
       margin: 0 15px;
       font-weight: 600;
       font-size: 1rem;
+      cursor: pointer;
     }
 
     nav a:hover {
-      color: #e91e63; /* Rosa glam */
+      color: #e91e63;
     }
 
+    /* Secciones estilo pestañas con transición lenta */
     section {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.8s ease, max-height 0.8s ease;
+      padding: 0 20px;
+    }
+
+    section.active {
+      opacity: 1;
+      max-height: 2000px; /* suficiente para mostrar todo el contenido */
       padding: 50px 20px;
-      text-align: center;
     }
 
     section h2 {
@@ -58,6 +68,28 @@
       color: #000;
     }
 
+    /* Galería */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .galeria-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .galeria-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Calendly */
     #reserva iframe {
       width: 100%;
       height: 700px;
@@ -94,14 +126,14 @@
   <header>
     <h1>The Tarot Nails</h1>
     <nav>
-      <a href="#conocenos">Conózcanos</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#galeria">Galería</a>
-      <a href="#reserva">Reserva tu cita</a>
+      <a onclick="showSection('conocenos')">Conózcanos</a>
+      <a onclick="showSection('servicios')">Servicios</a>
+      <a onclick="showSection('galeria')">Galería</a>
+      <a onclick="showSection('reserva')">Reserva tu cita</a>
     </nav>
   </header>
 
-  <section id="conocenos">
+  <section id="conocenos" class="active">
     <h2>Conózcanos</h2>
     <p>En The Tarot Nails fusionamos arte, estilo y cuidado personal para ofrecerte la mejor experiencia en uñas.</p>
   </section>
@@ -113,10 +145,15 @@
 
   <section id="galeria">
     <h2>Galería</h2>
-    <p>Aquí podrás ver algunos de nuestros diseños más destacados.</p>
+    <div class="galeria-grid">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+1" alt="Diseño de uñas 1">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+2" alt="Diseño de uñas 2">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+3" alt="Diseño de uñas 3">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+4" alt="Diseño de uñas 4">
+    </div>
+    <p>💅 Aquí puedes ver algunos de nuestros trabajos. ¡Muy pronto más fotos reales!</p>
   </section>
 
-  <!-- Sección Reserva con Calendly -->
   <section id="reserva">
     <h2>Reserva tu cita</h2>
     <iframe src="https://calendly.com/tarotnails4/30min"></iframe>
@@ -130,6 +167,14 @@
       <a href="#">Facebook</a>
     </p>
   </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
