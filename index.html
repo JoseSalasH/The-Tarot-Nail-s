@@ -33,13 +33,16 @@
       text-align: center;
     }
 
+    /* Logo adaptativo */
     .logo-header {
       position: absolute;
-      left: 20px;
-      top: 20px;
-      height: 50px;
+      left: 2%;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 8vh; /* altura relativa según el dispositivo */
       width: auto;
       cursor: pointer;
+      max-height: 100px;
     }
 
     header h1 {
@@ -51,6 +54,9 @@
 
     nav {
       margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     nav a {
@@ -166,7 +172,7 @@
     /* Responsivo para móviles y tablets */
     @media (max-width: 768px) {
       header h1 { font-size: 2.2rem; }
-      .logo-header { height: 40px; left: 15px; top: 15px; }
+      .logo-header { height: 10vw; } /* logo relativo al ancho de pantalla */
       nav a { font-size: 0.95rem; margin: 5px 10px; }
       section.active { padding: 35px 15px; }
       .galeria-grid img { height: 220px; }
@@ -175,7 +181,7 @@
 
     @media (max-width: 480px) {
       header h1 { font-size: 1.8rem; }
-      .logo-header { height: 35px; left: 10px; top: 10px; }
+      .logo-header { height: 12vw; }
       nav a { font-size: 0.85rem; margin: 5px 8px; }
       section.active { padding: 20px 10px; }
       .galeria-grid img { height: 180px; }
@@ -188,7 +194,7 @@
 
   <header>
     <a href="#" onclick="showSection('conocenos')">
-      <img src="Untitled Project.png" alt="Logo The Tarot Nails" class="logo-header">
+      <img src="img/Untitled Project.png" alt="Logo The Tarot Nails" class="logo-header">
     </a>
     <h1>The Tarot Nails</h1>
     <nav>
@@ -260,11 +266,15 @@
     function showSection(sectionId) {
       const sections = document.querySelectorAll('section');
       sections.forEach(sec => sec.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
+      const activeSection = document.getElementById(sectionId);
+      activeSection.classList.add('active');
 
       const links = document.querySelectorAll('nav a');
       links.forEach(link => link.classList.remove('active'));
       document.getElementById('link-' + sectionId).classList.add('active');
+
+      // Scroll suave para que no tape el header fijo
+      activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     document.getElementById('link-conocenos').classList.add('active');
