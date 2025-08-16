@@ -25,7 +25,7 @@
 
     header {
       background-color: #000;
-      padding: 30px 20px; /* más espacio para el logo grande */
+      padding: 30px 20px;
       position: fixed;
       top: 0;
       width: 100%;
@@ -33,16 +33,16 @@
       text-align: center;
     }
 
-    /* Logo mucho más grande y adaptativo */
+    /* Logo grande y adaptativo */
     .logo-header {
       position: absolute;
       left: 2%;
       top: 50%;
       transform: translateY(-50%);
-      height: 18vh; /* mucho más grande */
+      height: 27vh;    /* 50% más grande que antes */
       width: auto;
       cursor: pointer;
-      max-height: 250px; /* límite en pantallas enormes */
+      max-height: 400px;
     }
 
     header h1 {
@@ -88,7 +88,7 @@
       overflow: hidden;
       transition: opacity 0.8s ease, max-height 0.8s ease, transform 0.8s ease;
       padding: 0 20px;
-      margin-top: 120px; /* para no tapar contenido por el header más alto */
+      margin-top: 140px; /* ajustado por header más alto */
     }
 
     section.active {
@@ -169,10 +169,13 @@
       text-decoration: underline;
     }
 
-    /* Responsivo para móviles y tablets */
+    /* Media queries: móviles y tablets */
     @media (max-width: 768px) {
       header h1 { font-size: 2.2rem; }
-      .logo-header { height: 20vw; } /* logo relativo al ancho */
+      .logo-header { 
+        left: 1%;      /* más a la izquierda */
+        height: 40vw;  /* mucho más grande proporcionalmente */
+      }
       nav a { font-size: 0.95rem; margin: 5px 10px; }
       section.active { padding: 35px 15px; }
       .galeria-grid img { height: 220px; }
@@ -181,13 +184,15 @@
 
     @media (max-width: 480px) {
       header h1 { font-size: 1.8rem; }
-      .logo-header { height: 25vw; }
+      .logo-header { 
+        left: 0.5%;    /* aún más a la izquierda */
+        height: 50vw;  /* más grande en móviles pequeños */
+      }
       nav a { font-size: 0.85rem; margin: 5px 8px; }
       section.active { padding: 20px 10px; }
       .galeria-grid img { height: 180px; }
       #reserva iframe { height: 400px; }
     }
-
   </style>
 </head>
 <body>
