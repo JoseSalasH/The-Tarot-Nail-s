@@ -1,62 +1,82 @@
-/* Estilos generales */
+/* ===============================
+   Estilos Generales
+=============================== */
 body {
-    font-size: italic, sans-serif;
+    font-family: "Comic Sans MS", cursive, sans-serif; /* Resto de la página */
     margin: 0;
     padding: 0;
     background-color: #fff8f0;
     color: #333;
 }
 
-/* Header */
+/* ===============================
+   Header
+=============================== */
 header {
     background-color: #ff99cc;
     color: white;
     padding: 20px;
     text-align: center;
 }
+
+header h1 {
+    font-family: 'Dancing Script', cursive; /* Título cursiva elegante */
+}
+
 header nav a {
     margin: 0 15px;
     color: white;
     text-decoration: none;
 }
 
-/* Secciones */
+/* ===============================
+   Secciones
+=============================== */
 section {
     padding: 40px 20px;
     max-width: 800px;
     margin: auto;
 }
 
-/* Formulario */
+/* ===============================
+   Formulario de Reservas
+=============================== */
 form {
     display: flex;
     flex-direction: column;
 }
+
 form label {
     margin-top: 10px;
 }
+
 form input, form select, form button {
     margin-top: 5px;
     padding: 8px;
 }
 
-/* Botón */
+/* ===============================
+   Botón
+=============================== */
 button {
     margin-top: 15px;
     background-color: #ff99cc;
     border: none;
     color: white;
     cursor: pointer;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
+
 button:hover {
     background-color: #ff66aa;
 }
 
-/* Footer */
+/* ===============================
+   Footer
+=============================== */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #ff99cc;
     color: white;
 }
-
