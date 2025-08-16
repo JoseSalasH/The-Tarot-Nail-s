@@ -172,8 +172,7 @@
     /* Media queries: tablets y móviles */
     @media (max-width: 768px) {
       .logo-header { 
-        left: 20%;      /* más a la izquierda */
-        height: 40vw;    /* tamaño proporcional al ancho del dispositivo */
+        heigth: 40vw;
       }
       header h1 { font-size: 2.2rem; }
       nav a { font-size: 0.95rem; margin: 5px 10px; }
@@ -184,8 +183,11 @@
 
     @media (max-width: 480px) {
       .logo-header { 
-        left: 20%;      /* aún más a la izquierda */
-        height: 50vw;    /* mantiene tamaño actual en móvil */
+        heigth: 50vw;
+position: relative; 
+        left: 0;
+        top: 0;
+        margin-left: 0;
       }
       header h1 { font-size: 1.8rem; }
       nav a { font-size: 0.85rem; margin: 5px 8px; }
