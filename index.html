@@ -25,7 +25,7 @@
 
   header {
     background-color: #000;
-    padding: 18px 10px;
+    padding: 20px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -35,24 +35,23 @@
 
   header h1 {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 2.3rem;
+    font-size: 3rem;
     color: #fff;
     margin: 0;
     cursor: pointer;
-    letter-spacing: 2px;
   }
 
   nav {
-    margin-top: 8px;
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
   }
 
   nav a {
     text-decoration: none;
     color: #f8f8f8;
+    margin: 0 15px;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
@@ -72,8 +71,8 @@
     max-height: 0;
     overflow: hidden;
     transition: opacity 0.8s ease, max-height 0.8s ease, transform 0.8s ease;
-    margin-top: 130px;
     padding: 0 20px;
+    margin-top: 140px;
   }
 
   section.active {
@@ -86,29 +85,14 @@
   section h2 {
     font-family: 'Cinzel Decorative', cursive;
     font-size: 2rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #000;
-    text-align: center;
-    position: relative;
-  }
-
-  section h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #ff5c8d;
-    margin: 8px auto 0;
-    border-radius: 2px;
   }
 
   section h3 {
     font-family: 'Cinzel Decorative', cursive;
     color: #000;
-    margin-top: 20px;
     margin-bottom: 10px;
-    font-size: 1.3rem;
-    text-align: left;
   }
 
   .galeria-grid {
@@ -186,6 +170,7 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     z-index: 2000;
   }
+
   .whatsapp-btn img {
     width: 30px;
     height: 30px;
@@ -193,22 +178,20 @@
 
   /* Responsivo */
   @media (max-width: 768px) {
-    header h1 { font-size: 2rem; letter-spacing: 1px; }
-    nav a { font-size: 0.95rem; }
+    header h1 { font-size: 2.2rem; }
+    nav a { font-size: 0.95rem; margin: 5px 10px; }
     section.active { padding: 35px 15px; }
-    section h2 { font-size: 1.5rem; }
-    section h3 { font-size: 1.1rem; }
-    .galeria-grid img { height: 200px; }
+    .galeria-grid img { height: 220px; }
     #reserva iframe { height: 500px; }
-    #ubicacion iframe { height: 280px; }
   }
 
   @media (max-width: 480px) {
-    header { padding: 14px 8px; }
-    header h1 { font-size: 1.6rem; }
-    nav a { font-size: 0.85rem; margin: 3px 6px; }
+    header { padding: 10px 6px; }
+    header h1 { font-size: 1.4rem; letter-spacing: 1px; }
+    nav { gap: 8px; }
+    nav a { font-size: 0.8rem; padding-bottom: 2px; }
     section.active { padding: 20px 10px; }
-    .galeria-grid img { height: 160px; }
+    .galeria-grid img { height: 180px; }
     #reserva iframe { height: 400px; }
     #ubicacion iframe { height: 220px; }
   }
@@ -239,8 +222,9 @@
       <p>Ser un salón líder en innovación y estilo, destacando por dedicación, pasión y compromiso con la belleza de nuestros clientes.</p>
 
       <div id="ubicacion" style="margin-top: 20px;">
-        <h3>Encuéntranos en Waze</h3>
-        <iframe src="https://embed.waze.com/iframe?zoom=15&lat=10.012265&lon=-84.214862&pin=1" allowfullscreen></iframe>
+        <h3>Encuéntranos</h3>
+        <!-- Mapa Google Maps Minimalista -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.020208640648!2d-84.214862!3d10.012265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9a47f8f2c9b%3A0x1111111111111111!2sAlajuela%2C%20Costa%20Rica!5e0!3m2!1ses!2scr!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
   </section>
@@ -276,7 +260,7 @@
   <p>Síguenos en <a href="https://www.instagram.com/thetarotnails_/" target="_blank">Instagram</a></p>
 </footer>
 
-<!-- Botón WhatsApp -->
+<!-- Botón WhatsApp flotante -->
 <a href="https://wa.me/50671586607" target="_blank" class="whatsapp-btn">
   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
 </a>
