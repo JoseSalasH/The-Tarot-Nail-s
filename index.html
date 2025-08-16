@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Tarot Nails</title>
 
+<!-- SEO -->
+<meta name="description" content="The Tarot Nails - Salón especializado en manicure, pedicure y nail art en Alajuela, Costa Rica. Reserva tu cita online.">
+
 <!-- Fuentes -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -55,14 +58,29 @@
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
-    padding-bottom: 3px;
-    transition: color 0.3s, border-bottom 0.3s;
     position: relative;
+    padding-bottom: 3px;
+    transition: color 0.3s;
   }
 
-  nav a:hover, nav a.active {
+  /* Animación minimalista del menú */
+  nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ff5c8d;
+    transition: width 0.3s;
+    margin: auto;
+  }
+  nav a:hover::after,
+  nav a.active::after {
+    width: 100%;
+  }
+
+  nav a:hover,
+  nav a.active {
     color: #ff5c8d;
-    border-bottom: 2px solid #ff5c8d;
   }
 
   section {
@@ -73,6 +91,7 @@
     transition: opacity 0.8s ease, max-height 0.8s ease, transform 0.8s ease;
     padding: 0 20px;
     margin-top: 140px;
+    scroll-margin-top: 120px; /* Evita que el header tape títulos */
   }
 
   section.active {
@@ -87,6 +106,19 @@
     font-size: 2rem;
     margin-bottom: 20px;
     color: #000;
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Subrayado elegante en h2 */
+  section h2::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 3px;
+    background: #ff5c8d;
+    margin: 8px auto 0;
+    border-radius: 2px;
   }
 
   section h3 {
@@ -125,7 +157,7 @@
   }
 
   #reserva iframe { height: 700px; }
-  #ubicacion iframe { height: 400px; }
+  #ubicacion iframe { height: 300px; }
 
   footer {
     background-color: #000;
@@ -155,6 +187,26 @@
     text-decoration: underline;
   }
 
+  /* Botón flotante WhatsApp */
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    z-index: 2000;
+    transition: transform 0.3s;
+  }
+  .whatsapp-btn:hover {
+    transform: scale(1.1);
+  }
+
   /* Responsivo */
   @media (max-width: 768px) {
     header h1 { font-size: 2.2rem; }
@@ -178,10 +230,10 @@
 <header>
   <h1 onclick="showSection('conocenos')">The Tarot Nails</h1>
   <nav>
-    <a id="link-conocenos" onclick="showSection('conocenos')">Conózcanos</a>
-    <a id="link-servicios" onclick="showSection('servicios')">Servicios</a>
-    <a id="link-galeria" onclick="showSection('galeria')">Galería</a>
-    <a id="link-reserva" onclick="showSection('reserva')">Agendar</a>
+    <a href="#conocenos" id="link-conocenos">Conózcanos</a>
+    <a href="#servicios" id="link-servicios">Servicios</a>
+    <a href="#galeria" id="link-galeria">Galería</a>
+    <a href="#reserva" id="link-reserva">Agendar</a>
   </nav>
 </header>
 
@@ -197,9 +249,14 @@
       <h3>Visión</h3>
       <p>Ser un salón líder en innovación y estilo, destacando por dedicación, pasión y compromiso con la belleza de nuestros clientes.</p>
 
+      <!-- Mapa minimalista -->
       <div id="ubicacion" style="margin-top: 20px;">
-        <h3>Encuéntranos en Waze</h3>
-        <iframe src="https://embed.waze.com/iframe?zoom=15&lat=10.012265&lon=-84.214862&pin=1" allowfullscreen></iframe>
+        <h3>Encuéntranos</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.8216049637026!2d-84.214862!3d10.012265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAwJzQ0LjEiTiA4NMKwMTInNTMuNSJX!5e0!3m2!1ses-419!2scr!4v1700000000000"
+          loading="lazy" allowfullscreen>
+        </iframe>
+        <p style="margin-top:10px; text-align:center;">📍 Alajuela, Costa Rica</p>
       </div>
     </div>
   </section>
@@ -212,17 +269,17 @@
   <section id="galeria">
     <h2>Galería</h2>
     <div class="galeria-grid">
-      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+1" alt="Diseño de uñas 1">
-      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+2" alt="Diseño de uñas 2">
-      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+3" alt="Diseño de uñas 3">
-      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+4" alt="Diseño de uñas 4">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+1" alt="Uñas con diseño elegante en tonos rosados" loading="lazy">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+2" alt="Manicure con estilo minimalista" loading="lazy">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+3" alt="Uñas con decoración artística" loading="lazy">
+      <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+4" alt="Diseño de uñas con glitter" loading="lazy">
     </div>
     <p>Aquí puedes ver algunos de nuestros trabajos.</p>
   </section>
 
   <section id="reserva">
     <h2>Reserva tu cita</h2>
-    <iframe src="https://calendly.com/tarotnails4/30min"></iframe>
+    <iframe src="https://calendly.com/tarotnails4/30min" loading="lazy"></iframe>
   </section>
 </div>
 
@@ -234,6 +291,9 @@
   </div>
   <p>Síguenos en <a href="https://www.instagram.com/thetarotnails_/" target="_blank">Instagram</a></p>
 </footer>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/50671586607" target="_blank" class="whatsapp-btn">💬</a>
 
 <script>
 function showSection(sectionId) {
