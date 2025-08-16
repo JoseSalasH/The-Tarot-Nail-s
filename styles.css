@@ -22,7 +22,7 @@ header {
 
 /* Título del salón */
 header h1 {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes', cursive; /* Fuente elegante cursiva */
     font-size: 3em;
     margin-bottom: 15px;
 }
@@ -32,6 +32,7 @@ nav.menu {
     margin-top: 10px;
 }
 
+/* Enlaces del menú */
 nav.menu a {
     display: inline-block;
     font-family: 'Playfair Display', serif;
@@ -47,12 +48,7 @@ nav.menu a:hover {
     color: #E91E63; /* Rosa intenso al pasar el mouse */
 }
 
-/* Responsive para móviles */
-@media (max-width: 600px) {
-    nav.menu a {
-        display: block;
-        margin: 8px 0;
-        /* Secciones generales */
+/* Secciones generales */
 section {
     background-color: #F8BBD0; /* Rosa suave */
     padding: 25px;
@@ -79,5 +75,45 @@ section p {
     text-align: center;
 }
 
+/* Botones */
+button {
+    background-color: #E91E63; /* Rosa intenso */
+    color: #FFF8F0; /* Blanco crema */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Formularios */
+input, select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #B0BEC5; /* Gris humo */
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+input:focus, select:focus {
+    border-color: #E91E63; /* Rosa intenso */
+}
+
+/* Responsive para móvil */
+@media (max-width: 600px) {
+    nav.menu a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    section {
+        margin: 20px 10px;
+        padding: 20px;
     }
 }
