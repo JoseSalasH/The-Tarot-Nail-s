@@ -12,11 +12,10 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #ffffff; /* fondo blanco */
+      background-color: #ffffff;
       color: #333;
     }
 
-    /* Contenedor central */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -58,7 +57,7 @@
     }
 
     nav a:hover {
-      color: #ff5c8d; /* rosa más intenso */
+      color: #ff5c8d;
       border-bottom: 2px solid #ff5c8d;
     }
 
@@ -67,20 +66,19 @@
       border-bottom: 2px solid #ff5c8d;
     }
 
-    /* Secciones estilo pestañas con transición lenta y deslizamiento */
     section {
       opacity: 0;
-      transform: translateY(30px); 
+      transform: translateY(30px);
       max-height: 0;
       overflow: hidden;
       transition: opacity 0.8s ease, max-height 0.8s ease, transform 0.8s ease;
       padding: 0 20px;
-      margin-top: 100px; /* espacio para el header fijo */
+      margin-top: 100px;
     }
 
     section.active {
       opacity: 1;
-      transform: translateY(0); 
+      transform: translateY(0);
       max-height: 2000px;
       padding: 50px 20px;
     }
@@ -98,7 +96,6 @@
       margin-bottom: 10px;
     }
 
-    /* Galería */
     .galeria-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -121,7 +118,6 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
-    /* Calendly */
     #reserva iframe {
       width: 100%;
       height: 700px;
@@ -130,7 +126,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    /* Footer con flexbox para alinear teléfono y ubicación */
     footer {
       background-color: #000;
       color: #fff;
@@ -162,15 +157,13 @@
     /* Responsivo para móviles y tablets */
     @media (max-width: 768px) {
       header h1 { font-size: 2.2rem; }
-      nav a { font-size: 0.95rem; margin: 5px 10px; } /* espaciado entre enlaces */
-
+      nav a { font-size: 0.95rem; margin: 5px 10px; }
       nav {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center; /* centra los enlaces en móviles */
+        justify-content: center;
         margin-top: 10px;
       }
-
       section.active { padding: 35px 15px; }
       .galeria-grid img { height: 220px; }
       #reserva iframe { height: 500px; }
@@ -199,7 +192,6 @@
   </header>
 
   <div class="container">
-    <!-- Sección Conózcanos con Misión y Visión -->
     <section id="conocenos" class="active">
       <h2>Conózcanos</h2>
       <p>The Tarot Nails es un espacio de cuidado de uñas, este fue creado y es atendido personalmente por su dueña, 
@@ -208,6 +200,10 @@
         como capacitaciones destacadas en el mundo de la belleza para cada vez dar un mejor servicio a sus clientes.
         Es un salón con altos estándares de calidad, utilizando productos líderes en el mercado y estando siempre al corriente de
         las tendencias y atendiendo con toda la actitud a sus clientes.</p>
+
+      <p>Encuéntranos en Waze: 
+        <a href="https://waze.com/ul?ll=10.012265,-84.214862&navigate=yes" target="_blank">Abrir en Waze</a>
+      </p>
 
       <div id="mision-vision" style="margin-top:40px;">
         <h3>Misión</h3>
@@ -241,7 +237,6 @@
     </section>
   </div>
 
-  <!-- Footer con Instagram blanco y teléfono en la misma línea -->
   <footer>
     <p>&copy; 2025 The Tarot Nails. Todos los derechos reservados.</p>
     <div class="footer-info">
@@ -259,13 +254,11 @@
       sections.forEach(sec => sec.classList.remove('active'));
       document.getElementById(sectionId).classList.add('active');
 
-      // Resaltar enlace activo
       const links = document.querySelectorAll('nav a');
       links.forEach(link => link.classList.remove('active'));
       document.getElementById('link-' + sectionId).classList.add('active');
     }
 
-    // Inicializar resaltado en la primera sección
     document.getElementById('link-conocenos').classList.add('active');
   </script>
 
