@@ -46,18 +46,20 @@
       color: #e91e63;
     }
 
-    /* Secciones estilo pestañas con transición lenta */
+    /* Secciones estilo pestañas con transición lenta y deslizamiento */
     section {
       opacity: 0;
+      transform: translateY(30px); /* empieza un poco abajo */
       max-height: 0;
       overflow: hidden;
-      transition: opacity 0.8s ease, max-height 0.8s ease;
+      transition: opacity 0.8s ease, max-height 0.8s ease, transform 0.8s ease;
       padding: 0 20px;
     }
 
     section.active {
       opacity: 1;
-      max-height: 2000px; /* suficiente para mostrar todo el contenido */
+      transform: translateY(0); /* se desliza a su posición */
+      max-height: 2000px;
       padding: 50px 20px;
     }
 
@@ -136,8 +138,8 @@
   <section id="conocenos" class="active">
     <h2>Conózcanos</h2>
     <p>The Tarot Nails es un espacio de cuidado de uñas, este fue creado y es atendido personalmente por su dueña, 
-      cada servicio refleja la dedicación, amor y detalle.Es un emprendimiento que surgió de un pasatiempo que se convirtió en 
-      una pasión que genera ingresos y a la vez bienestar emocional, la fundadora ha participado en diferentes seminarios así 
+      cada servicio refleja la dedicación, amor y detalle. Es un emprendimiento que surgió de un pasatiempo que se convirtió en 
+      una pasión que genera ingresos y a la vez bienestar emocional. La fundadora ha participado en diferentes seminarios así 
       como capacitaciones destacadas en el mundo de la belleza para cada vez dar un mejor servicio a sus clientes.
       Es un salón con altos estándares de calidad, utilizando productos líderes en el mercado y estando siempre al corriente de
       las tendencias y atendiendo con toda la actitud a sus clientes.</p>
@@ -168,7 +170,7 @@
     <p>&copy; 2025 The Tarot Nails. Todos los derechos reservados.</p>
     <p>📍 Alajuela, Costa Rica | 📞 +506 7158 6607</p>
     <p>Síguenos en 
-      <a href="#">Instagram</a> | 
+      <a href="https://www.instagram.com/thetarotnails_/" target="_blank">Instagram</a>
     </p>
   </footer>
 
