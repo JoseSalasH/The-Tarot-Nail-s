@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tarot Nails</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="logo.png" alt="Logotipo del salón" class="logo">
+        <h1>The Tarot Nails</h1>
+        <nav>
+            <a href="https://www.instagram.com/tuusuario/" target="_blank">Instagram</a>
+        </nav>
+    </header>
+
+    <!-- Historia del emprendimiento -->
+    <section id="historia">
+        <h2>Nuestra Historia</h2>
+        <p>
+            The Tarot Nails comenzó como un sueño de brindar un espacio donde la belleza y el bienestar se encuentren.
+            Nuestro objetivo es que cada clienta se sienta especial y disfrute de una experiencia única en nuestro salón.
+        </p>
+    </section>
+
+    <!-- Instalaciones / Galería -->
+    <section id="instalaciones">
+        <h2>Conozca Nuestras Instalaciones</h2>
+        <div class="galeria">
+            <img src="instalacion1.jpg" alt="Foto del salón 1">
+            <img src="instalacion2.jpg" alt="Foto del salón 2">
+            <img src="instalacion3.jpg" alt="Foto del salón 3">
+        </div>
+    </section>
+
+    <!-- Reserva de citas -->
+    <section id="reserva">
+        <h2>Reserva tu cita</h2>
+        <form id="form-reserva">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Tu nombre" required>
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required>
+
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" required>
+
+            <button type="submit">Reservar</button>
+        </form>
+        <div id="mensaje"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 The Tarot Nails</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
