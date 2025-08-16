@@ -319,19 +319,23 @@ function showSection(sectionId, scroll = true) {
   const linkElement = document.getElementById('link-' + sectionId);
   if(linkElement) linkElement.classList.add('active');
 
+  // 👇 Corrección: hacer scroll tomando en cuenta el header fijo
   if (scroll) {
-    activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const headerOffset = document.querySelector('header').offsetHeight; // altura del header
+    const sectionTop = activeSection.offsetTop - headerOffset; // posición corregida
+    window.scrollTo({ top: sectionTop, behavior: 'smooth' });
   }
 }
 
-// Al iniciar, mostramos "Conózcanos" sin hacer scroll
+// 👇 Iniciar en "Conózcanos" sin hacer scroll
 showSection('conocenos', false);
-  // Siempre iniciar arriba cuando se recarga la página
+
+// 👇 Siempre empezar arriba cuando se recarga la página
 window.onload = function() {
   window.scrollTo(0, 0);
 };
-
 </script>
+
 
 </body>
 </html>
