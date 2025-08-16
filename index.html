@@ -46,6 +46,7 @@
       cursor: pointer;
       padding-bottom: 3px;
       transition: color 0.3s, border-bottom 0.3s;
+      position: relative;
     }
 
     nav a:hover {
@@ -143,6 +144,35 @@
       color: #ff5c8d; /* hover rosa */
       text-decoration: underline;
     }
+
+    /* Responsivo para móviles */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+      }
+
+      section.active {
+        padding: 30px 15px;
+      }
+
+      #reserva iframe {
+        height: 500px;
+      }
+
+      .galeria-grid {
+        gap: 15px;
+        padding: 15px;
+      }
+
+      .galeria-grid img {
+        height: 200px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -202,7 +232,8 @@
   <footer>
     <p>&copy; 2025 The Tarot Nails. Todos los derechos reservados.</p>
     <p>📍 Alajuela, Costa Rica | 📞 <a href="tel:+50671586607" style="color:#fff; text-decoration:none;">+506 7158 6607</a></p>
-    <p>Síguenos en <a href="https://www.instagram.com/thetarotnails_/" target="_blank" style="color:#fff; text-decoration:none;">Instagram</a>
+    <p>Síguenos en 
+      <a href="https://www.instagram.com/thetarotnails_/" target="_blank" style="color:#fff; text-decoration:none;">Instagram</a>
     </p>
   </footer>
 
