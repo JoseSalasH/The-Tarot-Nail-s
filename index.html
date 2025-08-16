@@ -33,13 +33,13 @@
       text-align: center;
     }
 
-    /* Logo grande y adaptativo */
+    /* Logo adaptativo */
     .logo-header {
       position: absolute;
-      left: 2%;
+      left: 2%;         /* escritorio */
       top: 50%;
       transform: translateY(-50%);
-      height: 27vh;    /* 50% más grande que antes */
+      height: 30vh;     /* un poco más grande en escritorio */
       width: auto;
       cursor: pointer;
       max-height: 400px;
@@ -169,13 +169,13 @@
       text-decoration: underline;
     }
 
-    /* Media queries: móviles y tablets */
+    /* Media queries: tablets y móviles */
     @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
       .logo-header { 
-        left: 1%;      /* más a la izquierda */
-        height: 40vw;  /* mucho más grande proporcionalmente */
+        left: 0.5%;      /* más a la izquierda */
+        height: 40vw;    /* tamaño proporcional al ancho del dispositivo */
       }
+      header h1 { font-size: 2.2rem; }
       nav a { font-size: 0.95rem; margin: 5px 10px; }
       section.active { padding: 35px 15px; }
       .galeria-grid img { height: 220px; }
@@ -183,11 +183,11 @@
     }
 
     @media (max-width: 480px) {
-      header h1 { font-size: 1.8rem; }
       .logo-header { 
-        left: 0.5%;    /* aún más a la izquierda */
-        height: 50vw;  /* más grande en móviles pequeños */
+        left: 0.3%;      /* aún más a la izquierda */
+        height: 50vw;    /* mantiene tamaño actual en móvil */
       }
+      header h1 { font-size: 1.8rem; }
       nav a { font-size: 0.85rem; margin: 5px 8px; }
       section.active { padding: 20px 10px; }
       .galeria-grid img { height: 180px; }
@@ -286,7 +286,7 @@
       links.forEach(link => link.classList.remove('active'));
       document.getElementById('link-' + sectionId).classList.add('active');
 
-      // Scroll suave para que no tape el header fijo
+      // Scroll suave
       activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
