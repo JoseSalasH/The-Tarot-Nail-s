@@ -7,39 +7,39 @@
 
 /* Body general */
 body {
-    font-family: 'Helvetica', Arial, sans-serif;
-    background-color: #FFF8F0; /* Blanco crema para fondo general */
-    color: #212121; /* Negro profundo para texto */
+    font-family: 'Playfair Display', serif; /* Fuente principal para texto */
+    background-color: #FFF8F0; /* Blanco crema */
+    color: #212121; /* Negro profundo */
 }
 
 /* Encabezado */
 header {
     background-color: #212121; /* Negro profundo */
-    color: #FFF8F0; /* Texto blanco crema */
+    color: #FFF8F0; /* Blanco crema */
     text-align: center;
     padding: 20px 10px;
 }
 
-/* Título del salón */
+/* Título del salón con Great Vibes */
 header h1 {
-    font-size: 2em;
-    font-weight: bold;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
     margin-bottom: 15px;
 }
 
-/* Barra de navegación horizontal */
+/* Barra de navegación horizontal con Playfair Display */
 nav.menu {
     margin-top: 10px;
 }
 
-/* Enlaces del menú */
 nav.menu a {
     display: inline-block;
-    color: #FFF8F0; /* Blanco crema */
+    font-family: 'Playfair Display', serif;
+    color: #FFF8F0;
     text-decoration: none;
     margin: 0 15px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     transition: color 0.3s;
 }
 
@@ -47,43 +47,10 @@ nav.menu a:hover {
     color: #E91E63; /* Rosa intenso al pasar el mouse */
 }
 
-/* Secciones */
-section {
-    background-color: #F8BBD0; /* Rosa suave */
-    padding: 25px;
-    margin: 30px auto;
-    max-width: 900px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(176,190,197,0.3); /* sombra gris humo */
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    nav.menu a {
+        display: block;
+        margin: 8px 0;
+    }
 }
-
-/* Títulos secciones */
-section h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    color: #212121; /* Negro profundo */
-}
-
-/* Botones */
-button {
-    background-color: #E91E63; /* Rosa intenso */
-    color: #FFF8F0; /* Blanco crema */
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: opacity 0.3s;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-/* Formularios */
-input, select {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #B0BEC5; /* Gris humo */
-    outline: none;
-    font-size: 16px;
