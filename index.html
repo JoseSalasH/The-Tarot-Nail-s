@@ -30,18 +30,14 @@
       top: 0;
       width: 100%;
       z-index: 1000;
-    }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: center; /* centra el título */
-      gap: 15px;
-      position: relative;
+      text-align: center;
     }
 
     .logo-header {
-      height: 50px; /* tamaño del logo */
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      height: 50px;
       width: auto;
       cursor: pointer;
     }
@@ -55,7 +51,6 @@
 
     nav {
       margin-top: 10px;
-      text-align: center;
     }
 
     nav a {
@@ -171,7 +166,7 @@
     /* Responsivo para móviles y tablets */
     @media (max-width: 768px) {
       header h1 { font-size: 2.2rem; }
-      .logo-header { height: 40px; }
+      .logo-header { height: 40px; left: 15px; top: 15px; }
       nav a { font-size: 0.95rem; margin: 5px 10px; }
       section.active { padding: 35px 15px; }
       .galeria-grid img { height: 220px; }
@@ -180,7 +175,7 @@
 
     @media (max-width: 480px) {
       header h1 { font-size: 1.8rem; }
-      .logo-header { height: 35px; }
+      .logo-header { height: 35px; left: 10px; top: 10px; }
       nav a { font-size: 0.85rem; margin: 5px 8px; }
       section.active { padding: 20px 10px; }
       .galeria-grid img { height: 180px; }
@@ -192,12 +187,10 @@
 <body>
 
   <header>
-    <div class="header-content">
-      <a href="#" onclick="showSection('conocenos')">
-        <img src="logo.png" alt="Logo The Tarot Nails" class="logo-header">
-      </a>
-      <h1>The Tarot Nails</h1>
-    </div>
+    <a href="#" onclick="showSection('conocenos')">
+      <img src="logo.png" alt="Logo The Tarot Nails" class="logo-header">
+    </a>
+    <h1>The Tarot Nails</h1>
     <nav>
       <a id="link-conocenos" onclick="showSection('conocenos')">Conózcanos</a>
       <a id="link-servicios" onclick="showSection('servicios')">Servicios</a>
