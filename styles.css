@@ -7,7 +7,7 @@
 
 /* Body general */
 body {
-    font-family: 'Playfair Display', serif; /* Fuente principal para texto */
+    font-family: 'Playfair Display', serif; /* Fuente principal para texto y secciones */
     background-color: #FFF8F0; /* Blanco crema */
     color: #212121; /* Negro profundo */
 }
@@ -22,7 +22,7 @@ header {
 
 /* Título del salón */
 header h1 {
-    font-family: 'Great Vibes', cursive; /* Fuente elegante cursiva */
+    font-family: 'Great Vibes', cursive; /* Mantener fuente cursiva elegante */
     font-size: 3em;
     margin-bottom: 15px;
 }
@@ -35,7 +35,7 @@ nav.menu {
 /* Enlaces del menú */
 nav.menu a {
     display: inline-block;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif; /* Mantener fuente de secciones */
     color: #FFF8F0;
     text-decoration: none;
     margin: 0 15px;
@@ -62,13 +62,13 @@ section {
 section h2 {
     text-align: center;
     margin-bottom: 15px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif; /* Mantener fuente de secciones */
     color: #212121; /* Negro profundo */
 }
 
 /* Texto de sección */
 section p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif; /* Mantener fuente de secciones */
     font-size: 18px;
     line-height: 1.6;
     color: #212121;
