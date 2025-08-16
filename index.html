@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Tarot Nails</title>
+<title>The Tarot Nails | Uñas en Alajuela, Costa Rica</title>
+
+<!-- 🔎 SEO Básico -->
+<meta name="description" content="The Tarot Nails - Salón de uñas en Alajuela, Costa Rica. Servicios de manicure, pedicure, uñas acrílicas, Gel X, Polygel y más. Reserva tu cita en línea.">
+<meta name="keywords" content="uñas, manicure, pedicure, gel x, polygel, uñas acrílicas, uñas Alajuela, The Tarot Nails">
+<meta name="author" content="The Tarot Nails">
+<meta name="robots" content="index, follow">
 
 <!-- Fuentes -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -72,7 +78,7 @@
     overflow: hidden;
     transition: opacity 0.8s ease, max-height 0.8s ease, transform 0.8s ease;
     padding: 0 20px;
-    margin-top: 140px;
+    /* ❌ margin-top eliminado para evitar huecos */
   }
 
   section.active {
@@ -80,6 +86,7 @@
     transform: translateY(0);
     max-height: 3000px;
     padding: 50px 20px;
+    margin-top: 140px; /* ✅ ahora solo en la sección activa */
   }
 
   section h2 {
@@ -245,99 +252,3 @@
 </style>
 </head>
 <body>
-
-<header>
-  <h1 onclick="showSection('conocenos')">The Tarot Nails</h1>
-  <nav>
-    <a id="link-conocenos" onclick="showSection('conocenos')">Conózcanos</a>
-    <a id="link-servicios" onclick="showSection('servicios')">Servicios</a>
-    <a id="link-galeria" onclick="showSection('galeria')">Galería</a>
-    <a id="link-reserva" onclick="showSection('reserva')">Agendar</a>
-  </nav>
-</header>
-
-<div class="container">
-  <section id="conocenos" class="active">
-    <h2>Conózcanos</h2>
-    <p>The Tarot Nails es un espacio de cuidado de uñas, atendido personalmente por su dueña, reflejando dedicación y detalle...</p>
-
-    <div id="mision-vision" style="margin-top:40px;">
-      <h3>Misión</h3>
-      <p>Ofrecer servicios de cuidado de uñas de alta calidad, brindando una experiencia única.</p>
-
-      <h3>Visión</h3>
-      <p>Ser un salón líder en innovación y estilo, destacando por dedicación, pasión y compromiso con la belleza de nuestros clientes.</p>
-
-      <div id="ubicacion" style="margin-top: 20px; text-align:center;">
-        <h3>Ubicación</h3>
-        <a href="https://www.google.com/maps?q=10.012265,-84.214862" 
-           target="_blank" class="map-btn">
-          Ver ubicación
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <div class="servicios-grid">
-      <div class="card"><h3>Multi-flex Luminary</h3><p>₡15.000</p></div>
-      <div class="card"><h3>Gel X</h3><p>₡17.000 en adelante</p></div>
-      <div class="card"><h3>Polygel</h3><p>₡17.000 en adelante</p></div>
-      <div class="card"><h3>Semipermanente manos</h3><p>₡12.000</p></div>
-      <div class="card"><h3>Semipermanente pies</h3><p>₡10.000</p></div>
-      <div class="card"><h3>Pedicura sencilla</h3><p>₡16.000</p></div>
-      <div class="card"><h3>Pedicura Spa</h3><p>₡20.000</p></div>
-    </div>
-  </section>
-
-  <section id="galeria">
-    <h2>Galería</h2>
-    <div class="galeria-grid">
-      <img src="galeria-unas-1.jpeg" alt="Diseño de uñas 1">
-      <img src="galeria-unas-2.jpeg" alt="Diseño de uñas 2">
-      <img src="galeria-unas-3.jpeg" alt="Diseño de uñas 3">
-      <img src="galeria-unas-4.jpeg" alt="Diseño de uñas 4">
-    </div>
-
-    <div style="text-align:center; margin-top:20px;">
-      <a href="https://www.instagram.com/thetarotnails_/" target="_blank" class="insta-btn">
-        Ver más diseños en Instagram
-      </a>
-    </div>
-  </section>
-
-  <section id="reserva">
-    <h2>Reserva tu cita</h2>
-    <iframe src="https://calendly.com/tarotnails4/30min"></iframe>
-  </section>
-</div>
-
-<footer>
-  <p>&copy; 2025 The Tarot Nails. Todos los derechos reservados.</p>
-  <div class="footer-info">
-    <span>📍 Alajuela, Costa Rica</span> | 
-    <a href="https://wa.me/50671586607" target="_blank">WhatsApp</a>
-  </div>
-  <p>Síguenos en <a href="https://www.instagram.com/thetarotnails_/" target="_blank">Instagram</a></p>
-</footer>
-
-<script>
-function showSection(sectionId) {
-  const sections = document.querySelectorAll('section');
-  sections.forEach(sec => sec.classList.remove('active'));
-  const activeSection = document.getElementById(sectionId);
-  activeSection.classList.add('active');
-
-  const links = document.querySelectorAll('nav a');
-  links.forEach(link => link.classList.remove('active'));
-  const linkElement = document.getElementById('link-' + sectionId);
-  if(linkElement) linkElement.classList.add('active');
-}
-
-// 👉 Iniciar en "Conózcanos"
-showSection('conocenos');
-</script>
-
-</body>
-</html>
