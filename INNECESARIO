@@ -1,3 +1,0 @@
-git rm script.js
-git commit -m "Eliminar archivo innecesario"
-git push origin main
