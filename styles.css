@@ -1,3 +1,17 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body general */
+body {
+    font-family: 'Helvetica', Arial, sans-serif;
+    background-color: #fff0f5; /* fondo suave rosado */
+    color: #333;
+}
+
 /* Encabezado */
 header {
     background-color: #000; /* fondo negro */
@@ -8,17 +22,17 @@ header {
 
 /* Título del salón */
 header h1 {
-    margin: 0;
     font-size: 2em;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
-/* Menú horizontal */
+/* Barra de navegación horizontal */
 nav.menu {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
-/* Estilos de los enlaces del menú */
+/* Enlaces del menú */
 nav.menu a {
     display: inline-block;
     color: white;
@@ -30,10 +44,10 @@ nav.menu a {
 }
 
 nav.menu a:hover {
-    color: #ff69b4; /* color rosado al pasar el mouse */
+    color: #ff69b4; /* cambio a rosado al pasar el mouse */
 }
 
-/* Asegurar que sea responsive en móviles */
+/* Responsive para móviles */
 @media (max-width: 600px) {
     nav.menu a {
         display: block;
